@@ -1,0 +1,12 @@
+<div class="task-info">
+  <span class="task-title">{{task.title}}</span>
+  <br>
+  <span class="task-desc">{{task.desc}}</span>
+  <br>
+  <div class="change-status-btn" [ngSwitch]='task.status'>
+    <button *ngSwitchCase="status.ToDo" (click)='changeStatus(status.InProgress)'>In-Progress</button>
+    <button *ngSwitchCase="status.ToDo" (click)='changeStatus(status.Archive)'>Archive</button>
+    <button *ngSwitchCase="status.InProgress" (click)='changeStatus(status.Done)'>Done</button>
+    <button *ngSwitchCase="status.Done" (click)='changeStatus(status.Archive)'>Archive</button>
+  </div>
+</div>

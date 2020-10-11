@@ -1,0 +1,5 @@
+<h3>{{label}}</h3>
+
+<div>
+  <app-task *ngFor='let task of tasks' [task]='task' (changeStatusEvent)='removeTask($event)'></app-task>
+</div>

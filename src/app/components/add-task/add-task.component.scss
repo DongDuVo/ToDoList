@@ -1,0 +1,16 @@
+form {
+  label {
+    display: block;
+  }
+
+  input {
+    margin-bottom: 10px;
+  }
+
+  .alert-danger {
+    span {
+      color: red;
+      margin-left: 5px;
+    }
+  }
+}

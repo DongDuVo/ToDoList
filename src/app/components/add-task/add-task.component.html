@@ -1,0 +1,21 @@
+<h2>{{label}}</h2>
+
+<form [formGroup]='createTaskForm' (submit)='createNewTask()'>
+  <div>
+    <label for="title">Title: </label>
+    <input name='title' formControlName='title'>
+    <span class="alert-danger" *ngIf='title.invalid && (title.dirty || title.touched)'>
+      <span *ngIf='title.errors.required'>Title is required.</span>
+      <span *ngIf='title.errors.pattern'>Title cannot contain special charaters.</span>
+    </span>
+  </div>
+  <div>
+    <label for="desc">Description: </label>
+    <input name='desc' formControlName='desc'>
+    <span class="alert-danger" *ngIf='desc.invalid && (desc.dirty || desc.touched)'>
+      <span *ngIf='desc.errors.required'>Description is required.</span>
+      <span *ngIf='desc.errors.maxlength'>Description can contain only 250 charaters.</span>
+    </span>
+  </div>
+  <button type="submit" [disabled]='createTaskForm.invalid'>Create Task</button>
+</form>
